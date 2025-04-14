@@ -11,13 +11,21 @@ if __name__ == '__main__':
 
      cursor = mydb.cursor()
      cursor.execute("""
-         SELECT DISTINCT w1.`Grand Prix` AS GP1, w2.`Grand Prix` AS GP2, w1.Laps
-         FROM winners as w1, winners as w2
-         WHERE w1.Laps = w2.Laps
-         AND w1.Laps > 120
-         AND w1.`Grand Prix`< w2.`Grand Prix`
+        SELECT DISTINCT Driver AS driver
+        FROM drivers 
+        WHERE Nationality = 'FRA'
+        
+        UNION
+        
+        SELECT DISTINCT Winner AS driver
+        FROM winners 
+        WHERE Car = 'Ferrari'
+        ORDER BY driver;
       """)
 
      print(', '.join(str(row) for row in cursor.fetchall()))
+
+
+
 
 
