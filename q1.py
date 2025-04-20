@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
      cursor = mydb.cursor()
      cursor.execute("""
-         SELECT Driver
+         SELECT DISTINCT Driver
          FROM drivers
          WHERE Nationality = 'BRA';
      """)

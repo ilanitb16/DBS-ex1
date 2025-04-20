@@ -31,11 +31,8 @@ if __name__ == '__main__':
      
      FROM drivers
      GROUP BY drivers.Nationality
+     HAVING min_time IS NOT NULL
+     AND latest IS NOT NULL;
       """)
 
      print(', '.join(str(row) for row in cursor.fetchall()))
-
-
-
-
-
