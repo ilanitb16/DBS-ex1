@@ -15,8 +15,6 @@ if __name__ == '__main__':
      # the best (minimum) lap time by its drivers, and the latest race win date by its drivers — but only for
      # nationalities that have at least one lap time and one win.
 
-     # We were told to avoid NULL values, hence the last part of the query.
-     
      cursor.execute("""
      SELECT drivers.Nationality, 
      
@@ -38,8 +36,12 @@ if __name__ == '__main__':
      
      FROM drivers
      GROUP BY drivers.Nationality
-     HAVING min_time IS NOT NULL
-     AND latest IS NOT NULL;
       """)
+
+     # At first we were told to avoid NULL values, but then the version changed. In case it is needed,
+     # I would add the following lines to the end of the query:
+     # HAVING min_time IS NOT NULL
+     # AND latest IS NOT NULL;
+
 
      print(', '.join(str(row) for row in cursor.fetchall()))
