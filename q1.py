@@ -10,6 +10,8 @@ if __name__ == '__main__':
      )
 
      cursor = mydb.cursor()
+
+     # SQL query which fetches distinct Brazilian drivers
      cursor.execute("""
          SELECT DISTINCT Driver
          FROM drivers

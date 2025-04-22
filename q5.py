@@ -10,6 +10,12 @@ if __name__ == '__main__':
      )
 
      cursor = mydb.cursor()
+
+     # The query: joins the 'drivers' and 'fastest_laps' tables based on matching car names. Then, select only the records
+     # where lap time is under 2 minutes or 120 seconds. For each car, calculates the average points scored
+     # by its drivers and groups the results by car.
+     # Orders the cars by their average points in descending order.
+
      cursor.execute("""
         SELECT drivers.Car, AVG(drivers.PTS) as avg_pts
         FROM drivers, fastest_laps

@@ -10,6 +10,10 @@ if __name__ == '__main__':
      )
 
      cursor = mydb.cursor()
+
+     # This query calculates the difference between the total points (PTS) scored by the Ferrari team
+     # and the total points scored by the Maserati team.
+
      cursor.execute("""
        SELECT 
              (SELECT SUM(PTS) FROM teams WHERE Team = 'Ferrari') -

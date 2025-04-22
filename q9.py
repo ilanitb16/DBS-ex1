@@ -10,6 +10,13 @@ if __name__ == '__main__':
      )
 
      cursor = mydb.cursor()
+
+     # This query lists each nationality along with the average points (PTS) scored by its drivers,
+     # the best (minimum) lap time by its drivers, and the latest race win date by its drivers — but only for
+     # nationalities that have at least one lap time and one win.
+
+     # We were told to avoid NULL values, hence the last part of the query.
+     
      cursor.execute("""
      SELECT drivers.Nationality, 
      

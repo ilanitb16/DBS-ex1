@@ -10,6 +10,9 @@ if __name__ == '__main__':
      )
 
      cursor = mydb.cursor()
+
+     # SQL query which wll select all the distinct drivers
+     # whose nationality is 'ITA' (Italian) from the 'drivers' table
      cursor.execute("""
              SELECT DISTINCT Driver
              From drivers 

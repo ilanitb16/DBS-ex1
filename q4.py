@@ -10,6 +10,9 @@ if __name__ == '__main__':
      )
 
      cursor = mydb.cursor()
+     # The query finds the car that had the most wins in the year 1999 and counts how many times that same car
+     # won again in the year 2001.
+
      cursor.execute("""SELECT COUNT(*)
          FROM winners
          WHERE Car = (

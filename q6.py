@@ -10,6 +10,10 @@ if __name__ == '__main__':
      )
 
      cursor = mydb.cursor()
+
+     # This query finds all pairs of different Grand Prix races (GP1, GP2) where the number of
+     # laps was the same (greater than 120), and lists them without repeating the same pair in reverse order.
+
      cursor.execute("""
          SELECT DISTINCT w1.`Grand Prix` AS GP1, w2.`Grand Prix` AS GP2, w1.Laps
          FROM winners as w1, winners as w2

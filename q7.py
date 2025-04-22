@@ -10,6 +10,10 @@ if __name__ == '__main__':
      )
 
      cursor = mydb.cursor()
+
+     # This query finds all unique drivers who are either French (Nationality = 'FRA')
+     # or who have won a race driving a Ferrari, and lists them together in alphabetical order.
+
      cursor.execute("""
         SELECT DISTINCT Driver AS driver
         FROM drivers 
